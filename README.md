@@ -67,5 +67,5 @@ Vendita take-away di piatti **Danicucina**.
 
 # Opzionale
 * Direttiva `include` - PHP
-* Storico acquisti ed analisi vendite in console admin
+* Storico 10 ultimi login in console admin
 * Login / registrazione tramite modal in `home.php`
