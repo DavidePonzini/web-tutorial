@@ -2,10 +2,10 @@
 -- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Creato il: Lug 16, 2022 alle 16:44
--- Versione del server: 10.4.21-MariaDB
--- Versione PHP: 8.1.6
+-- Host: 127.0.0.1
+-- Generation Time: Jul 17, 2022 at 02:14 PM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `blog`
+-- Database: `website`
 --
 
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `articoli`
+-- Table structure for table `articoli`
 --
 
 CREATE TABLE `articoli` (
@@ -35,7 +35,7 @@ CREATE TABLE `articoli` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dump dei dati per la tabella `articoli`
+-- Dumping data for table `articoli`
 --
 
 INSERT INTO `articoli` (`name`, `descr`, `price`, `img_path`) VALUES
@@ -50,15 +50,45 @@ INSERT INTO `articoli` (`name`, `descr`, `price`, `img_path`) VALUES
 ('Spaghetti Aglio Nero Olio e Peperoncino', 'Gli Spaghetti Aglio Nero Olio e Peperoncino sono una versione gourmet della classica aglio, olio e peperoncino. La ricetta è veramente simile a quella tradizionale ma qui protagonista assoluto è l’aglio nero che conferisce al piatto un sapore più morbido e delicato. Inoltre, la pasta viene risottata per ottenere una consistenza più cremosa. L’aglio nero è il risultato del lento processo di fermentazione naturale dell’aglio bianco, perde il suo sapore forte e pungente e il sapore ricorda un incrocio tra liquirizia, salsa di soia e aceto balsamico. Per maggiori informazioni sull’aglio nero vi rimando al mio risotto all’aglio nero che ho pubblicato qualche tempo fa. La ricetta degli spaghetti aglio nero olio e peperoncino è facile e veloce. Per due persone sono più che sufficienti 2-3 spicchi d’aglio nero. Mi raccomando, scegliete un buon olio extravergine d’oliva. Il peperoncino va bene sia fresco che secco. Vediamo insieme come preparare gli spaghetti aglio nero olio e peperoncino.', '9.99', '/res/DSC_0468-1024x1536.jpg'),
 ('Tofu con Funghi e Verdure Saltati', 'Il Tofu con Funghi e Verdure Saltati in padella è una ricetta facile e veloce da preparare, vegetariana e vegana, dal sapore tipicamente orientale. Il tofu è un alimento diffuso in quasi tutto l’Estremo Oriente, si ottiene dalla cagliatura del latte di soia e pertanto è ricco di proteine vegetali. E’ un prodotto molto versatile in cucina ma se cucinato male può risultare poco saporito e persino gommoso. La ricetta che vi condivido oggi è un vero salva pranzo ma soprattutto un modo per farvi innamorare del tofu! Il piatto è un trionfo di gusto e di colori! Il bianco è dato dal tofu, l’arancione dalle carote, il marrone dai funghi shiitake mentre il verde dalle zucchine o da altre verdure di stagione. In inverno, per esempio, potete utilizzare il cavolo cinese. Vediamo insieme come preparare il Tofu con Funghi e Verdure Saltati.', '8.48', '/res/DSC_1052.jpg');
 
+-- --------------------------------------------------------
+
 --
--- Indici per le tabelle scaricate
+-- Table structure for table `users`
+--
+
+CREATE TABLE `users` (
+  `username` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `firstname` varchar(100) NOT NULL,
+  `lastname` varchar(100) NOT NULL,
+  `birthdate` date NOT NULL,
+  `pwd_hash` varchar(100) NOT NULL,
+  `newsletter` tinyint(4) NOT NULL,
+  `admin` tinyint(4) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`username`, `email`, `firstname`, `lastname`, `birthdate`, `pwd_hash`, `newsletter`, `admin`) VALUES
+('dav', 'dav@dav.com', 'Davide', 'Ponzini', '1995-04-18', '$2y$10$xkbL3L5gS1xEiynR6BJw6u/MP5jgJJGEJ6AEXDfU.AuRGBGRaWf9y', 0, 1);
+
+--
+-- Indexes for dumped tables
 --
 
 --
--- Indici per le tabelle `articoli`
+-- Indexes for table `articoli`
 --
 ALTER TABLE `articoli`
   ADD PRIMARY KEY (`name`);
+
+--
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`username`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
