@@ -28,23 +28,8 @@
 <body>
     <div class="parallax bg1"></div>
 
-
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="index.html">DavidePonzini</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-              <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-              <a class="nav-link" href="store.html">Store</a>
-              <a class="nav-link disabled" href="profile.html">Profile</a>
-              <a class="nav-link disabled" href="admin.html">Admin console</a>
-            </div>
-          </div>
-        </div>
-      </nav>
+    <!-- Navbar -->
+    <?php include('components/navbar.html'); ?>
 
     <div class="container">
         <div class="content-tab">

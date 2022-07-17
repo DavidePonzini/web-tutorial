@@ -46,3 +46,15 @@ body {
     top: 50%;
     transform: translateY(-50%);
 }
+
+.card {
+    display:inline-block;
+    margin: 12px;
+    word-wrap: normal;
+    vertical-align: top;
+    width:18rem;
+}
+
+.card .card-text {
+    color: black;
+}

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 17, 2022 at 02:14 PM
+-- Generation Time: Jul 17, 2022 at 02:38 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -24,10 +24,10 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `articoli`
+-- Table structure for table `products`
 --
 
-CREATE TABLE `articoli` (
+CREATE TABLE `products` (
   `name` varchar(300) NOT NULL,
   `descr` varchar(10000) DEFAULT NULL,
   `price` decimal(10,2) DEFAULT NULL,
@@ -35,10 +35,10 @@ CREATE TABLE `articoli` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `articoli`
+-- Dumping data for table `products`
 --
 
-INSERT INTO `articoli` (`name`, `descr`, `price`, `img_path`) VALUES
+INSERT INTO `products` (`name`, `descr`, `price`, `img_path`) VALUES
 ('Curry Verde di Pollo Thai', 'Curry Verde di Pollo Thai un piatto facile e veloce da preparare e dalla piccantezza tipica tailandese. Perfetto per ogni occasione, è un vero must per gli amanti della cucina etnica! La pasta di curry è uno dei mix di spezie più usato nella cucina tailandese. Esiste di vari colori, in questo caso utilizzeremo quella verde. Tra le spezie che lo compongono troviamo scorza di lime kaffir e peperoncino verde. La pasta di curry si può preparare in casa ma qui da noi è difficile trovare gli ingredienti. Per questo io utilizzo quella già pronta. Si può trovare in alcuni supermercati oppure nei negozi etnici o online. A bilanciare il sapore pungente e leggermente piccante della pasta di curry c’è la dolcezza del latte di cocco. Quest’ultimo viene venduto in lattine e generalmente ha un prezzo molto contenuto. Il risultato è un piatto cremoso, speziato ma dal sapore equilibrato! In Tailandia viene preparato in tanti modi, anche con altre carni o con i gamberi. La mia versione prevede petto di pollo, piselli e fagiolini. Per me è fantastica! In casa mi chiedono tutti il bis! Prepariamo insieme il Curry Verde di Pollo Thai.', '10.00', '/res/DSC_0991.jpg'),
 ('Focaccia al Basilico e Olive con Lievito Istantaneo', 'Focaccia al Basilico e Olive con Lievito Istantaneo pronta in 5 minuti! Alta, soffice e profumata grazie al basilico tritato nell’impasto! Perfetta da preparare all’ultimo minuto! Stamattina avevo proprio voglia di mangiare una bella fetta di focaccia ma il tempo stringeva e non c’era tempo per farla lievitare. Così ho pensato di sperimentare questo impasto con lievito chimico (tipo quello per dolci) e il risultato è stato formidabile! La focaccia è sofficissima, alta e profumata, una fetta tira l’altra! Ve la consiglio, non lasciatevela scappare! Segnatevi la ricetta e fatemi sapere se vi piace!', '4.55', '/res/DSC_0940-1024x1536.jpg'),
 ('Insalata di Fagiolini con Dressing alla Senape', 'Insalata di Fagiolini con Dressing alla Senape. Ho sempre avuto un rapporto di odio/amore con i fagiolini. Così teneri, buoni e versatili in cucina ma così faticosi da raccogliere! Quando andavo nell’orto ci lasciavo sempre la schiena Scherzi a parte, i fagiolini sono l’emblema dell’estate e oggi ve li voglio proporre in un’insalata fredda con dressing alla senape, arricchita con semi di sesamo e pinoli per dare un tocco crunchy in più! Una proposta super fresh, veloce e sfiziosa perfetta per l’estate! Fatemi sapere se vi piace! Vi aspetto sul mio profilo Instagram! Buona giornata!', '6.64', '/res/DSC_0931-1024x1536.jpg'),
@@ -79,9 +79,9 @@ INSERT INTO `users` (`username`, `email`, `firstname`, `lastname`, `birthdate`, 
 --
 
 --
--- Indexes for table `articoli`
+-- Indexes for table `products`
 --
-ALTER TABLE `articoli`
+ALTER TABLE `products`
   ADD PRIMARY KEY (`name`);
 
 --
