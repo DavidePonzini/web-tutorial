@@ -61,7 +61,7 @@ function show_elem(elem) {
     col1.append(buy_btn);
 
     let col2 = $('<div></div>');
-    col2.addClass('col');
+    col2.addClass('col center-y');
     row.append(col2);
 
     let price = $("<label></label>");

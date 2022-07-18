@@ -42,9 +42,7 @@ body {
 }
 
 .center-y {
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
+    align-self: center;
 }
 
 .card {
@@ -57,4 +55,8 @@ body {
 
 .card .card-text {
     color: black;
+}
+
+.hidden {
+    display: none;
 }

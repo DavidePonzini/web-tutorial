@@ -29,7 +29,7 @@
     <div class="parallax bg1"></div>
 
     <!-- Navbar -->
-    <?php include('components/navbar.html'); ?>
+    <?php include('components/navbar.php'); ?>
 
     <div class="container">
         <div class="content-tab">
