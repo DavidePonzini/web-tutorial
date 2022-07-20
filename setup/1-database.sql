@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 18, 2022 at 12:23 PM
+-- Generation Time: Jul 20, 2022 at 01:40 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -64,7 +64,7 @@ CREATE TABLE `users` (
   `birthdate` date NOT NULL,
   `pwd_hash` varchar(100) NOT NULL,
   `newsletter` tinyint(4) NOT NULL,
-  `admin` tinyint(4) NOT NULL
+  `admin` tinyint(4) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --

@@ -14,22 +14,22 @@
         if(!isset($_POST['username'], $_POST['password']))
             die('Invalid request');
 
-        $my_username = $_POST['username'];
-        $my_password = $_POST['password'];
-        $rememberme = isset($_POST['rememberme']);
+        $form_username = $_POST['username'];
+        $form_password = $_POST['password'];
+        $form_rememberme = isset($_POST['rememberme']);
 
-        $db_password = execute_query('SELECT pwd_hash FROM users WHERE username = ?', array($my_username));
+        $db_password = execute_query_select('SELECT pwd_hash FROM users WHERE username = ?', array($form_username));
 
         if(count($db_password) != 1) {
             $error = 'Username';
         } else {
             $password_hash = $db_password[0]['pwd_hash'];
 
-            if (password_verify($my_password, $password_hash)) {
-                login($my_username);
+            if (password_verify($form_password, $password_hash)) {
+                login($form_username);
 
-                if ($rememberme)
-                    set_cookie('username', $my_username);
+                if ($form_rememberme)
+                    set_cookie('username', $form_username);
 
                 redirect('index.php');
             } else {
@@ -55,7 +55,6 @@
 
     <!-- Custom -->
     <link rel="stylesheet" href="styles/style.css">
-    <link rel="stylesheet" href="styles/social.css">
     <link rel="stylesheet" href="styles/icons.css">
 </head>
 <body>
@@ -65,6 +64,31 @@
     <div class="container">
         <div class="content-tab">
             <h1>Login</h1>
+            <div class="row">
+                <div class="col">
+                    <form action="login.php" method="post">
+                        <div class="mb-3">
+                            <label for="username" class="form-label">Username</label>
+                            <input type="text" class="form-control <?php echo_conditional(isset($error) && $error = 'Username', 'is-invalid', ''); ?>" id="username" name="username">
+                            <div class="invalid-feedback <?php echo_conditional(isset($error) && $error = 'Username', '', 'hidden'); ?>" id="username-error">Invalid username.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" class="form-control <?php echo_conditional(isset($error) && $error = 'Password', 'is-invalid', ''); ?>" id="password" name="password">
+                            <div class="invalid-feedback <?php echo_conditional(isset($error) && $error = 'Password', '', 'hidden'); ?>" id="password-error">Invalid password.</div>
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="rememberme" name="rememberme">
+                            <label class="form-check-label" for="rememberme">Remember me</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+                <div class="col center">
+                    <i class="bi bi-box-arrow-in-left icon-big icon-gold"></i>
+                </div>
+            </div>
+            
         </div>
     </div>
 

@@ -39,4 +39,17 @@
         else
             echo $value_if_false;
     }
+
+    // Return years elapsed from date $from to date $to.
+    //   If $from > $to, the result is negative.
+    //   If $to is not provided, use current datetime
+    function datediff_years(DateTime $from, DateTime $to = new DateTime()) {
+        $diff = $from->diff($to);
+        
+        $y = $diff->y;
+        if ($diff->invert)
+            $y = -$y;
+        
+        return $y;
+    }
 ?>

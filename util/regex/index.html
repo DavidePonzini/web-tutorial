@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+	<title>Regex</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+	<div class="container container-lg">
+		<div class="content-tab">
+			<h1>Testo <small class="text-muted">(Max 2048 caratteri)</small></h1>
+			<div class="row mb-3">
+                <div class="col-12">
+                    <textarea oninput="executeRegex()" type="text" rows="10" class="example" id="text"></textarea>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-6">
+                    <button class="btn btn-primary btn-block mb-3"
+                        onclick="setTextFromUrl('https://raw.githubusercontent.com/DavidePonzini/didattica/main/lorem-ipsum.txt')">
+                        Lorem ipsum
+                    </button>
+                </div>
+                <div class="col-6">
+                    <button class="btn btn-primary btn-block mb-3"
+                        onclick="setTextFromUrl('https://raw.githubusercontent.com/DavidePonzini/didattica/main/moby-dick.txt')">
+                        Moby Dick
+                    </button>
+                </div>
+            </div>
+            
+            <h1>Regex</h1>
+            <div class="row">
+                <div class="col-12 mb-3">
+                    <textarea oninput="executeRegex()" type="text" id="regex" placeholder="[^ ]{3}t[ir]" rows="10"></textarea>
+                </div>
+            </div>
+
+            <h1>Risultato</h1>
+			<div class="row mb-3">
+                <div class="col-12">
+                    <table class="example" id="result">
+                        <tr>
+                            <th>Indice</th>
+                            <th>Valore</th>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+	</div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+    <script src="scripts/regex.js"></script>
+    <script>
+        $(function() {
+            setText('Clicca su uno dei pulsanti situati sotto per selezionare un testo da mostrare (oppure usa direttamente questa frase qua).');
+
+            getRegex();
+            getText();
+        })
+    </script>
+</body>
+</html>

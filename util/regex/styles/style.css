@@ -1,0 +1,37 @@
+body {
+    background: url(../res/bg.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.content-tab {
+    margin-top: 6px;
+    margin-bottom: 6px;
+    background-color: rgba(248, 249, 250, .7);
+    border-radius: 12px;
+    padding: 12px;
+}
+
+.example {
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    padding: 12px;
+    border-radius: 12px;
+    border: 2px dashed rgba(148, 149, 150, .7);
+    background: none;
+    overflow: auto;
+    
+}
+
+#regex {
+    width: 100%;
+    font-family: monospace;
+    text-align: center;
+}
+
+.error {
+    color: red;
+}
