@@ -3,8 +3,7 @@
    require('php/session.php');
 
    if (!is_admin()) {
-       http_response_code(403);    // Not authorized
-       die();
+       error_unauthorized();
    }
 ?>
 
@@ -25,17 +24,98 @@
     <!-- Custom -->
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/icons.css">
+
+    <style>
+        label {
+            margin-left: .5rem;
+        }
+
+        input[type="text"], textarea {
+            width: 100%;
+        }
+
+        input[type="number"] {
+            text-align: right;
+        }
+    </style>
 </head>
 <body>
     <!-- Navbar -->
     <?php include('components/navbar.php'); ?>
 
+    <!-- New product modal -->
+    <div class="modal" tabindex="-1" id="new-product-modal">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">New product</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="insert-product-form" enctype="multipart/form-data" action="api/insert-product.php" method="post">
+                    <div class="mb-3">
+                        <label for="new-product-name" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="new-product-name" name="name" oninput="check_name()">
+                        <div class="invalid-feedback" id="new-product-name-error">Name cannot be empty.</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="new-product-description" class="form-label">Description</label>
+                        <textarea class="form-control" name="descr" id="new-product-description" rows="10"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="new-product-price" class="form-label">Price</label>
+                        <input type="number" min="0" value="5.00" class="form-control" id="new-product-price" name="price"></input>
+                    </div>
+                    <div class="mb-3">
+                        <label for="new-product-price" class="form-label">Image</label>
+                        <input type="file" class="form-control" id="new-product-image" name="img"></input>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="submit" form="insert-product-form" class="btn btn-success" onclick="insert_product()">Insert</button>
+            </div>
+            </div>
+        </div>
+    </div>
+
     <div class="container">
         <div class="content-tab">
             <h1>Users</h1>
+            <table class="table table-light table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">Username</th>
+                        <th scope="col">Permissions</th>
+                    </tr>
+                </thead>
+                <tbody id="admins"></tbody>
+            </table>
         </div>
+
         <div class="content-tab">
             <h1>Products</h1>
+            <div class="row mb-4">
+                <div class="col center">
+                    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#new-product-modal">
+                        Insert new product
+                    </button>
+                </div>
+            </div>
+            
+
+            <table class="table table-light table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col" style="width: 20%">Name</th>
+                        <th scope="col" style="width: 50%">Description</th>
+                        <th scope="col" style="width: 20%">Price</th>
+                        <th scope="col" style="width: 10%"></th>
+                    </tr>
+                </thead>
+                <tbody id="products"></tbody>
+            </table>
         </div>
     </div>
 
@@ -44,5 +124,8 @@
 
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <!-- Custom -->
+    <script src="scripts/admin.js"></script>
 </body>
 </html>

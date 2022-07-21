@@ -4,6 +4,16 @@
         die();
     }
 
+    function error_unauthorized() {
+        http_response_code(403);    // Not authorized
+        die();
+    }
+
+    function error_bad_request() {
+        http_response_code(400);    // Bad request
+        die();
+    }
+
     function execute_query(string $query, array $params = array()) {
         $db_username = 'myuser';
         $db_password = 'password';
