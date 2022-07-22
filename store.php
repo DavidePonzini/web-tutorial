@@ -43,7 +43,16 @@
         }
 
         .card.bought {
-            background-color: palegreen;
+            background-color: darkgreen;
+            color: white;
+        }
+
+        .card.bought .card-text {
+            color: white;
+        }
+
+        .card.bought a {
+            color: deepskyblue;
         }
     </style>
 </head>
@@ -53,15 +62,15 @@
 
     <div class="container">
         <div class="content-tab">
-            <h1>I nostri articoli</h1>
+            <h1>Our products</h1>
             <div id="products"></div>
         </div>
     </div>
 
     <nav class="navbar fixed-bottom navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-            <span class="navbar-text">Totale <span id="totale">0</span> $</span>
-            <a class="btn btn-primary" href="<?php echo_conditional(is_logged_in(), "#", "login.php") ?>">Acquista</a>
+            <span class="navbar-text">Total: <span id="totale">0</span> €</span>
+            <a class="btn btn-primary" href="#" onclick="alert('This is a demo website, you cannot actually buy items.')">Buy</a>
         </div>
     </nav>           
 

@@ -52,6 +52,7 @@ body {
     word-wrap: normal;
     vertical-align: top;
     width:18rem;
+    color: black;
 }
 
 .card .card-text {

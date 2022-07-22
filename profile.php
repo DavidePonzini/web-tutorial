@@ -32,8 +32,27 @@
         <div class="content-tab">
             <h1>Profile</h1>
             <div class="row">
-                <div class="col">
-                    <!-- TODO -->
+                <div class="col center">
+                    <h2>Name</h2>
+                    <p id="name"></p>
+                    
+                    <hr>
+                    <h2>Email</h2>
+                    <p id="email"></p>
+                    
+                    <hr>
+                    <h2>Age</h2>
+                    <p><span id="age"></span> seconds</p>
+                    
+                    <div id="newsletter" class="hidden">
+                        <hr>
+                        <h2>You are subscribed to the newsletter.</h2>
+                    </div>
+
+                    <div id="admin" class="hidden">
+                        <hr>
+                        <h2>You have admin privileges!</h2>
+                    </div>
                 </div>
                 <div class="col center">
                     <i class="bi bi-person-circle icon-big icon-gold"></i>
@@ -48,5 +67,8 @@
 
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <!-- Custom -->
+    <script src="scripts/profile.js"></script>
 </body>
 </html>

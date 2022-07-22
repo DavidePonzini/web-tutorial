@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 20, 2022 at 01:40 PM
+-- Generation Time: Jul 22, 2022 at 08:51 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -72,7 +72,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`username`, `email`, `firstname`, `lastname`, `birthdate`, `pwd_hash`, `newsletter`, `admin`) VALUES
-('dav', 'dav@dav.com', 'Davide', 'Ponzini', '1995-04-18', '$2y$10$xkbL3L5gS1xEiynR6BJw6u/MP5jgJJGEJ6AEXDfU.AuRGBGRaWf9y', 0, 1);
+('admin', 'admin@website.com', 'Admin', 'User', '1995-04-18', '$2y$10$xkbL3L5gS1xEiynR6BJw6u/MP5jgJJGEJ6AEXDfU.AuRGBGRaWf9y', 0, 1),
+('dav', 'dav@website.com', 'Davide', 'Ponzini', '1995-04-18', '$2y$10$xkbL3L5gS1xEiynR6BJw6u/MP5jgJJGEJ6AEXDfU.AuRGBGRaWf9y', 1, 1),
+('user', 'user@website.com', 'Regular', 'User', '2000-01-01', '$2y$10$xkbL3L5gS1xEiynR6BJw6u/MP5jgJJGEJ6AEXDfU.AuRGBGRaWf9y', 0, 0);
 
 --
 -- Indexes for dumped tables
