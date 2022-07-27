@@ -12,5 +12,8 @@
     $descr = $_GET['descr'];
     $price = $_GET['price'];
 
+    if($price < 0)
+        die('Price cannot be negative!');
+
     execute_query('UPDATE products SET descr = ?, price = ? WHERE name = ?', array($descr, $price, $name));
 ?>
