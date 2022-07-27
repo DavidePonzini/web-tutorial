@@ -24,9 +24,12 @@
 
     <!-- Only on this page -->
     <style>
+        body {
+            padding-bottom: 68px;
+        }
+
         #products {
             text-align: center;
-            margin-bottom: 68px;
         }
 
         .buy-btn-text {

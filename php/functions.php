@@ -44,10 +44,7 @@
     }
 
     function echo_conditional(bool $condition, string $value_if_true, string $value_if_false) {
-        if($condition)
-            echo $value_if_true;
-        else
-            echo $value_if_false;
+        echo $condition ? $value_if_true : $value_if_false;
     }
 
     // Return years elapsed from date $from to date $to.

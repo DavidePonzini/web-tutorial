@@ -5,7 +5,6 @@
     if(is_logged_in())
         redirect('index.php');
 
-
     function validate_form_data($username, $password, $password_confirm, $email, $firstname, $lastname, $birthdate) {
         // Username: at least 6 characters, only lowercase letters and underscores are allowed.
         //   It must begin and end with letters and cannot contain two consecutive undescores.
@@ -21,7 +20,7 @@
             die('Invalid password confirm');
 
         // Email: standard regex available from the web
-        if (!preg_match('/a/', $email))
+        if (!preg_match('/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/', $email))
             die('Invalid email');
         
         // First name: must begin with upper case letter, followed by zero or more letters or spaces. Nothing else allowed
@@ -121,7 +120,7 @@
                             echo '<div class="alert alert-danger d-flex center" role="alert">
                                     <i class="bi bi-exclamation-triangle-fill me-2"></i>
                                     <div>Username already taken, please choose a different one.</div>
-                                  </div>';                    
+                                  </div>';
                     ?>
                     <form action="registration.php" method="post">
                         <div class="mb-3">

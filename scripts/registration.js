@@ -37,7 +37,7 @@ function check_password() {
 
     status_password = valid;
     set_input_validity(input, valid);
-    check_submit();
+    check_password2();  // no need to call check_submit, it is already done by check_password2
 
     return valid;
 }
@@ -61,7 +61,7 @@ function check_email() {
     let value = input.val();
     
     let valid = true;
-    valid &= set_error_message('email-error', /a/.test(value));
+    valid &= set_error_message('email-error', /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(value));
 
     status_email = valid;
     set_input_validity(input, valid);

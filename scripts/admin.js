@@ -1,5 +1,3 @@
-let admins = {};
-
 $(document).ready(function() {
     $.ajax({
         url: "api/get-admins.php",
@@ -44,24 +42,19 @@ function show_admin(elem) {
 
     checkbox.click(function(e) {
         e.preventDefault();
-        change_admin(elem.username, checkbox, label);
+
+        let new_status = elem.admin == 1 ? 0 : 1;
+        $.ajax({
+            url: `api/set-admin.php?username=${elem.username}&value=${new_status}`,
+            success: function() {
+                elem.admin = new_status;
+                checkbox.prop('checked', new_status);
+                label.text(new_status ? 'Admin' : 'User');
+            }
+        });
     });
 
     $('#admins').append(row);
-}
-
-function change_admin(username, checkbox, label) {
-    let new_status = !admins[username];
-    let admin = new_status ? 1 : 0;  // convert to digit
-
-    $.ajax({
-        url: `api/set-admin.php?username=${username}&value=${admin}`,
-        success: function() {
-            admins[username] = new_status;
-            checkbox.prop('checked', new_status);
-            label.text(new_status ? 'Admin' : 'User');
-        }
-    });
 }
 
 function show_products(data) {
@@ -116,7 +109,7 @@ function show_product(elem) {
 
     delete_button.click(function() {
         delete_button.prop('disabled', true);
-        delete_product(elem.name, row);
+        delete_product(elem.name, row, delete_button);
     });
 
     $('#products').append(row);
@@ -137,15 +130,15 @@ function update_product(name, new_description, new_price, button) {
     });
 }
 
-function delete_product(name, row) {
-    $.ajax({
-        url: `api/delete-product.php?name=${name}`,
-        success: function() {
-            row.remove();
-        }
-    });
-}
-
-function insert_product() {
-
+function delete_product(name, row, button) {
+    if(confirm('Are you sure you want to delete this product?')) {
+        $.ajax({
+            url: `api/delete-product.php?name=${name}`,
+            success: function() {
+                row.remove();
+            }
+        });
+    } else {
+        button.prop('disabled', false);
+    }
 }

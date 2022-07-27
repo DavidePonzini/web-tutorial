@@ -5,7 +5,7 @@
     if (!is_admin())
         error_unauthorized();
 
-    if(!isset($_GET['name'], , $_GET['descr'], $_GET['price']))
+    if(!isset($_GET['name'], $_GET['descr'], $_GET['price']))
         error_bad_request();
 
     $name = $_GET['name'];

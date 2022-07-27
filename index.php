@@ -39,7 +39,9 @@
         <div class="content-tab">
             <h1>Le nostre specialità</h1>
             <div class="row">
-                <div class="col center"><i class="bi bi-stars icon-big icon-gold"></i></div>
+                <div class="col center">
+                    <i class="bi bi-stars icon-big icon-gold"></i>
+                </div>
                 <div class="col">
                     <div id="carouselExampleIndicators" class="carousel slide slideshow" data-bs-ride="carousel">
                         <div class="carousel-indicators">
@@ -68,7 +70,9 @@
                         </button>
                     </div>
                 </div>
-                <div class="col center"><i class="bi bi-stars icon-big icon-gold"></i></div>
+                <div class="col center">
+                    <i class="bi bi-stars icon-big icon-gold"></i>
+                </div>
             </div>
         </div>
 
