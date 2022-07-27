@@ -47,35 +47,35 @@
     <div class="modal" tabindex="-1" id="new-product-modal">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">New product</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <form id="insert-product-form" enctype="multipart/form-data" action="api/insert-product.php" method="post">
-                    <div class="mb-3">
-                        <label for="new-product-name" class="form-label">Name</label>
-                        <input type="text" class="form-control" id="new-product-name" name="name" oninput="check_name()">
-                        <div class="invalid-feedback" id="new-product-name-error">Name cannot be empty.</div>
-                    </div>
-                    <div class="mb-3">
-                        <label for="new-product-description" class="form-label">Description</label>
-                        <textarea class="form-control" name="descr" id="new-product-description" rows="10"></textarea>
-                    </div>
-                    <div class="mb-3">
-                        <label for="new-product-price" class="form-label">Price</label>
-                        <input type="number" min="0" value="5.00" step="0.01" class="form-control" id="new-product-price" name="price"></input>
-                    </div>
-                    <div class="mb-3">
-                        <label for="new-product-price" class="form-label">Image</label>
-                        <input type="file" class="form-control" id="new-product-image" name="img"></input>
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="submit" form="insert-product-form" class="btn btn-success" onclick="insert_product()">Insert</button>
-            </div>
+                <div class="modal-header">
+                    <h5 class="modal-title">New product</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="insert-product-form" enctype="multipart/form-data" action="api/insert-product.php" method="post">
+                        <div class="mb-3">
+                            <label for="new-product-name" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="new-product-name" name="name" oninput="check_name()">
+                            <div class="invalid-feedback" id="new-product-name-error">Name cannot be empty.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="new-product-description" class="form-label">Description</label>
+                            <textarea class="form-control" name="descr" id="new-product-description" rows="10"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="new-product-price" class="form-label">Price</label>
+                            <input type="number" min="0" value="5.00" step="0.01" class="form-control" id="new-product-price" name="price"></input>
+                        </div>
+                        <div class="mb-3">
+                            <label for="new-product-price" class="form-label">Image</label>
+                            <input type="file" class="form-control" id="new-product-image" name="img"></input>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" form="insert-product-form" class="btn btn-success" onclick="insert_product()">Insert</button>
+                </div>
             </div>
         </div>
     </div>
