@@ -1,7 +1,7 @@
 <?php
     require('../php/functions.php');
     require('../php/session.php');
-    require('../php/upload.php');
+    require('../php/files.php');
 
     if (!is_admin())
         error_unauthorized();
@@ -17,7 +17,7 @@
 
     try {
         execute_query('INSERT INTO products(name, descr, price, img_path) VALUES (?,?,?,?)', array($name, $descr, $price, $img_path));
-        upload_file($_FILES['img'], 'web-tutorial/res/');
+        upload_file($_FILES['img'], 'res/');
     } catch(Exception $e) {
         print_r($e);
         error_bad_request();
