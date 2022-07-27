@@ -122,6 +122,7 @@ function update_product(name, new_description, new_price, button) {
         url: `api/update-product.php?name=${name}&descr=${new_description}&price=${new_price}`,
         success: function() {
             button.prop('disabled', false);
+            alert('Product updated');
         },
         error: function(e) {
             console.log(e);
