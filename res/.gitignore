@@ -1,0 +1,17 @@
+# Ignore everything
+*
+
+# But not these files...
+!.gitignore
+!DSC_0069.jpg
+!DSC_0468-1024x1536.jpg
+!DSC_0573-1024x1536.jpg
+!DSC_0653b-1024x1536.jpg
+!DSC_0931-1024x1536.jpg
+!DSC_0940-1024x1536.jpg
+!DSC_0968.jpg
+!DSC_0991.jpg
+!DSC_1052.jpg
+!DSC_1093.jpg
+!flat-lay-takeaway-food-wooden-background-delivery-181694373.jpg
+!genova.jpg
