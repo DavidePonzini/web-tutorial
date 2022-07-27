@@ -143,3 +143,16 @@ function delete_product(name, row, button) {
         button.prop('disabled', false);
     }
 }
+
+function check_name() {
+    let input = $('#new-product-name');
+    let button = $('#new-product-submit');
+
+    if(input.val().length > 0) {
+        input.removeClass('is-invalid');
+        button.prop('disabled', false);
+    } else {
+        input.addClass('is-invalid');
+        button.prop('disabled', true);
+    }
+}
