@@ -69,12 +69,12 @@
                     <form action="login.php" method="post">
                         <div class="mb-3">
                             <label for="username" class="form-label">Username</label>
-                            <input type="text" class="form-control <?php echo_conditional(isset($error) && $error = 'Username', 'is-invalid', ''); ?>" id="username" name="username">
+                            <input type="text" class="form-control <?php echo_conditional(isset($error) && $error = 'Username', 'is-invalid', ''); ?>" id="username" name="username" placeholder="user | dav | admin">
                             <div class="invalid-feedback <?php echo_conditional(isset($error) && $error = 'Username', '', 'hidden'); ?>" id="username-error">Invalid username.</div>
                         </div>
                         <div class="mb-3">
                             <label for="password" class="form-label">Password</label>
-                            <input type="password" class="form-control <?php echo_conditional(isset($error) && $error = 'Password', 'is-invalid', ''); ?>" id="password" name="password">
+                            <input type="password" class="form-control <?php echo_conditional(isset($error) && $error = 'Password', 'is-invalid', ''); ?>" id="password" name="password" placeholder="pollo">
                             <div class="invalid-feedback <?php echo_conditional(isset($error) && $error = 'Password', '', 'hidden'); ?>" id="password-error">Invalid password.</div>
                         </div>
                         <div class="mb-3 form-check">
