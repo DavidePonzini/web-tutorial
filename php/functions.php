@@ -15,9 +15,9 @@
     }
 
     function execute_query(string $query, array $params = array()) {
-        $db_username = 'myuser';
+        $db_username = 'daniadmin';
         $db_password = 'password';
-        $db_dbname = 'website';
+        $db_dbname = 'dani_web_tutorial';
 
         try {
             $db = new PDO('mysql:host=localhost:3306;dbname=' . $db_dbname, $db_username, $db_password);
