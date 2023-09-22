@@ -18,7 +18,7 @@
         $form_password = $_POST['password'];
         $form_rememberme = isset($_POST['rememberme']);
 
-        $db_password = execute_query_select('SELECT pwd_hash FROM users WHERE username = ?', array($form_username));
+        $db_password = execute_query_select('SELECT pwd_hash FROM daniwebtutorial_users WHERE username = ?', array($form_username));
 
         if(count($db_password) != 1) {
             $error = 'Username';
@@ -29,7 +29,7 @@
                 login($form_username);
 
                 if ($form_rememberme)
-                    set_cookie('username', $form_username);
+                    set_cookie('daniwebtutorial_username', $form_username);
 
                 redirect('index.php');
             } else {

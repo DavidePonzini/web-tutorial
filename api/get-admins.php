@@ -7,5 +7,5 @@
         die();
     }
 
-    echo json_encode(execute_query_select('SELECT username, admin FROM users ORDER BY username'));
+    echo json_encode(execute_query_select('SELECT username, admin FROM daniwebtutorial_users ORDER BY username'));
 ?>

@@ -11,5 +11,5 @@
     $username = $_GET['username'];
     $admin = $_GET['value'];
 
-    execute_query('UPDATE users SET admin = ? WHERE username = ?', array($admin, $username));
+    execute_query('UPDATE daniwebtutorial_users SET admin = ? WHERE username = ?', array($admin, $username));
 ?>

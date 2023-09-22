@@ -7,5 +7,5 @@
         die();
     }
 
-    echo json_encode(execute_query_select('SELECT * FROM users WHERE username = ?', array($_SESSION['username'])));
+    echo json_encode(execute_query_select('SELECT * FROM daniwebtutorial_users WHERE username = ?', array($_SESSION['daniwebtutorial_username'])));
 ?>

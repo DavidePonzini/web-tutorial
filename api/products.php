@@ -1,5 +1,5 @@
 <?php
     require_once('../php/functions.php');
 
-    echo json_encode(execute_query_select('SELECT * FROM products'));   
+    echo json_encode(execute_query_select('SELECT * FROM daniwebtutorial_products'));   
 ?>

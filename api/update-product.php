@@ -15,5 +15,5 @@
     if($price < 0)
         die('Price cannot be negative!');
 
-    execute_query('UPDATE products SET descr = ?, price = ? WHERE name = ?', array($descr, $price, $name));
+    execute_query('UPDATE daniwebtutorial_products SET descr = ?, price = ? WHERE name = ?', array($descr, $price, $name));
 ?>

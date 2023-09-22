@@ -18,7 +18,7 @@
     // IMPORTANT: check data correctness!
 
     try {
-        execute_query('INSERT INTO products(name, descr, price, img_path) VALUES (?,?,?,?)', array($name, $descr, $price, $img_path));
+        execute_query('INSERT INTO daniwebtutorial_products(name, descr, price, img_path) VALUES (?,?,?,?)', array($name, $descr, $price, $img_path));
         upload_file($_FILES['img'], 'res/');
     } catch(Exception $e) {
         print_r($e);

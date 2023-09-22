@@ -69,7 +69,7 @@
         validate_form_data($form_username, $form_password, $form_password_confirm, $form_email, $form_firstname, $form_lastname, $form_birthdate);
 
         // Check if username is available (not yet registered)
-        $db_user_count = execute_query_select('SELECT username FROM users WHERE username = ?', array($form_username));
+        $db_user_count = execute_query_select('SELECT username FROM daniwebtutorial_users WHERE username = ?', array($form_username));
         $db_user_count = count($db_user_count);
 
         if ($db_user_count > 0) {
@@ -80,7 +80,7 @@
 
             $pwd_hash = password_hash($form_password, PASSWORD_DEFAULT);
 
-            execute_query('INSERT INTO users(username, email, firstname, lastname, birthdate, pwd_hash, newsletter) VALUES(?,?,?,?,?,?,?)',
+            execute_query('INSERT INTO daniwebtutorial_users(username, email, firstname, lastname, birthdate, pwd_hash, newsletter) VALUES(?,?,?,?,?,?,?)',
                 array($form_username, $form_email, $form_firstname, $form_lastname, $form_birthdate, $pwd_hash, $newsletter));
 
             redirect('login.php');
