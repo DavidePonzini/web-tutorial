@@ -11,12 +11,12 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                <a class="nav-link <?php echo_conditional($_SERVER['PHP_SELF'] == '/web-tutorial/index.php', "active", ""); ?>" href="index.php">Home</a>
-                <a class="nav-link <?php echo_conditional($_SERVER['PHP_SELF'] == '/web-tutorial/store.php', "active", ""); ?>" href="store.php">Store</a>
-                <a class="nav-link <?php echo_conditional($_SERVER['PHP_SELF'] == '/web-tutorial/login.php', "active", ""); ?> <?php echo_conditional(is_logged_in(), "hidden", ""); ?>" href="login.php">Login</a>
-                <a class="nav-link <?php echo_conditional($_SERVER['PHP_SELF'] == '/web-tutorial/registration.php', "active", ""); ?> <?php echo_conditional(is_logged_in(), "hidden", ""); ?>" href="registration.php">Registration</a>
-                <a class="nav-link <?php echo_conditional($_SERVER['PHP_SELF'] == '/web-tutorial/profile.php', "active", ""); ?> <?php echo_conditional(is_logged_in(), "", "hidden"); ?>" href="profile.php">Profile</a>
-                <a class="nav-link <?php echo_conditional($_SERVER['PHP_SELF'] == '/web-tutorial/admin.php', "active", ""); ?> <?php echo_conditional(is_admin(), "", "hidden"); ?>" href="admin.php">Admin console</a>
+                <a class="nav-link <?php echo_conditional($_SERVER['PHP_SELF'] == '/portfolio/2022-web-tutorial/index.php', "active", ""); ?>" href="index.php">Home</a>
+                <a class="nav-link <?php echo_conditional($_SERVER['PHP_SELF'] == '/portfolio/2022-web-tutorial/store.php', "active", ""); ?>" href="store.php">Store</a>
+                <a class="nav-link <?php echo_conditional($_SERVER['PHP_SELF'] == '/portfolio/2022-web-tutorial/login.php', "active", ""); ?> <?php echo_conditional(is_logged_in(), "hidden", ""); ?>" href="login.php">Login</a>
+                <a class="nav-link <?php echo_conditional($_SERVER['PHP_SELF'] == '/portfolio/2022-web-tutorial/registration.php', "active", ""); ?> <?php echo_conditional(is_logged_in(), "hidden", ""); ?>" href="registration.php">Registration</a>
+                <a class="nav-link <?php echo_conditional($_SERVER['PHP_SELF'] == '/portfolio/2022-web-tutorial/profile.php', "active", ""); ?> <?php echo_conditional(is_logged_in(), "", "hidden"); ?>" href="profile.php">Profile</a>
+                <a class="nav-link <?php echo_conditional($_SERVER['PHP_SELF'] == '/portfolio/2022-web-tutorial/admin.php', "active", ""); ?> <?php echo_conditional(is_admin(), "", "hidden"); ?>" href="admin.php">Admin console</a>
                 <a class="nav-link <?php echo_conditional(is_logged_in(), "", "hidden"); ?>" href="logout.php">Logout</a>
             </div>
         </div>
