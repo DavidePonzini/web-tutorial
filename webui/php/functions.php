@@ -18,9 +18,11 @@
         $db_username = 'daniadmin';
         $db_password = 'password';
         $db_dbname = 'dani_web_tutorial';
+        $db_host = 'db';
+        $db_port = '3306';
 
         try {
-            $db = new PDO('mysql:host=localhost:3306;dbname=' . $db_dbname, $db_username, $db_password);
+            $db = new PDO('mysql:host=' . $db_host . ':' . $db_port . ';dbname=' . $db_dbname, $db_username, $db_password);
             $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
             $stmt = $db->prepare($query);
