@@ -3,13 +3,15 @@ services:
     build: ./webui
     image: davideponzini/daniwebtutorial_webui
     container_name: daniwebtutorial_webui
+    restart: unless-stopped
     ports:
-      - "13305:80"
+      - "80:80"
 
   db:
     build: ./db
     image: davideponzini/daniwebtutorial_db
     container_name: daniwebtutorial_db
+    restart: unless-stopped
     environment:
       MYSQL_RANDOM_ROOT_PASSWORD: "true"
       MYSQL_DATABASE: dani_web_tutorial
