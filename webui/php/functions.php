@@ -15,11 +15,11 @@
     }
 
     function execute_query(string $query, array $params = array()) {
-        $db_username = 'daniadmin';
-        $db_password = 'password';
-        $db_dbname = 'dani_web_tutorial';
-        $db_host = 'db';
-        $db_port = '3306';
+        $db_username = getenv('DB_USERNAME') ?: 'daniadmin';
+        $db_password = getenv('DB_PASSWORD') ?: 'password';
+        $db_dbname = getenv('DB_NAME') ?: 'dani_web_tutorial';
+        $db_host = getenv('DB_HOST') ?: 'db';
+        $db_port = getenv('DB_PORT') ?: '3306';
 
         try {
             $db = new PDO('mysql:host=' . $db_host . ':' . $db_port . ';dbname=' . $db_dbname, $db_username, $db_password);
